@@ -11,39 +11,39 @@ namespace Laba2.Tests
 {
     public class ContactTests
     {
-        // тест для конструктора Contact
+        // С‚РµСЃС‚ РґР»СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Contact
         [Fact]
         public void Test_Contact_Constructor()
         {
-            // создаем экземпляр класса Contact с заданными параметрами
-            Contact contact = new Contact("Тони", "Старк", "+71234567899", "tonystark@gmail.com");
+            // Г±Г®Г§Г¤Г ГҐГ¬ ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° ГЄГ«Г Г±Г±Г  Contact Г± Г§Г Г¤Г Г­Г­Г»Г¬ГЁ ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ
+            Contact contact = new Contact("Г’Г®Г­ГЁ", "Г‘ГІГ Г°ГЄ", "+71234567899", "tonystark@gmail.com");
 
-            // проверяем, что поля класса Contact соответствуют заданным параметрам
-            Assert.Equal("Тони", contact.Name);
-            Assert.Equal("Старк", contact.Surname);
+            // ГЇГ°Г®ГўГҐГ°ГїГҐГ¬, Г·ГІГ® ГЇГ®Г«Гї ГЄГ«Г Г±Г±Г  Contact Г±Г®Г®ГІГўГҐГІГ±ГІГўГіГѕГІ Г§Г Г¤Г Г­Г­Г»Г¬ ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬
+            Assert.Equal("Г’Г®Г­ГЁ", contact.Name);
+            Assert.Equal("Г‘ГІГ Г°ГЄ", contact.Surname);
             Assert.Equal("+71234567899", contact.Phone);
             Assert.Equal("tonystark@gmail.com", contact.Email);
         }
 
-        // тест для метода Show
+        // ГІГҐГ±ГІ Г¤Г«Гї Г¬ГҐГІГ®Г¤Г  Show
         [Fact]
         public void Test_Show()
         {
-            // создаем экземпляр класса Contact с заданными параметрами
-            Contact contact = new Contact("Питер", "Паркер", "+73216549877", "peterparker@gmail.com");
+            // Г±Г®Г§Г¤Г ГҐГ¬ ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° ГЄГ«Г Г±Г±Г  Contact Г± Г§Г Г¤Г Г­Г­Г»Г¬ГЁ ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ
+            Contact contact = new Contact("ГЏГЁГІГҐГ°", "ГЏГ Г°ГЄГҐГ°", "+73216549877", "peterparker@gmail.com");
 
-            // перенаправляем стандартный вывод в строковый писатель
+            // ГЇГҐГ°ГҐГ­Г ГЇГ°Г ГўГ«ГїГҐГ¬ Г±ГІГ Г­Г¤Г Г°ГІГ­Г»Г© ГўГ»ГўГ®Г¤ Гў Г±ГІГ°Г®ГЄГ®ГўГ»Г© ГЇГЁГ±Г ГІГҐГ«Гј
             using (System.IO.StringWriter sw = new System.IO.StringWriter())
             {
-                Console.SetOut(sw); // перенаправляем поток вывода на объект
-                contact.Show(); // вызываем метод Show для контакта
+                Console.SetOut(sw); // ГЇГҐГ°ГҐГ­Г ГЇГ°Г ГўГ«ГїГҐГ¬ ГЇГ®ГІГ®ГЄ ГўГ»ГўГ®Г¤Г  Г­Г  Г®ГЎГєГҐГЄГІ
+                contact.Show(); // ГўГ»Г§Г»ГўГ ГҐГ¬ Г¬ГҐГІГ®Г¤ Show Г¤Г«Гї ГЄГ®Г­ГІГ ГЄГІГ 
 
-                Console.SetOut(Console.Out); // восстанавливаем стандартный вывод на консоль
-                string output = sw.ToString(); // получаем строку, которая была выведена методом Show
+                Console.SetOut(Console.Out); // ГўГ®Г±Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г±ГІГ Г­Г¤Г Г°ГІГ­Г»Г© ГўГ»ГўГ®Г¤ Г­Г  ГЄГ®Г­Г±Г®Г«Гј
+                string output = sw.ToString(); // ГЇГ®Г«ГіГ·Г ГҐГ¬ Г±ГІГ°Г®ГЄГі, ГЄГ®ГІГ®Г°Г Гї ГЎГ»Г«Г  ГўГ»ГўГҐГ¤ГҐГ­Г  Г¬ГҐГІГ®Г¤Г®Г¬ Show
 
-                // проверяем, что строка содержит ожидаемые данные контакта
-                Assert.Contains("Name: Питер", output);
-                Assert.Contains("Surname: Паркер", output);
+                // ГЇГ°Г®ГўГҐГ°ГїГҐГ¬, Г·ГІГ® Г±ГІГ°Г®ГЄГ  Г±Г®Г¤ГҐГ°Г¦ГЁГІ Г®Г¦ГЁГ¤Г ГҐГ¬Г»ГҐ Г¤Г Г­Г­Г»ГҐ ГЄГ®Г­ГІГ ГЄГІГ 
+                Assert.Contains("Name: ГЏГЁГІГҐГ°", output);
+                Assert.Contains("Surname: ГЏГ Г°ГЄГҐГ°", output);
                 Assert.Contains("Phone: +73216549877", output);
                 Assert.Contains("E-mail: peterparker@gmail.com", output);
             }
